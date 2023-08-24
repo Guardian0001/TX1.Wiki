@@ -20,11 +20,34 @@
       loadNavbar: true,
       coverpage: true,
       onlyCover: true,
-      subMaxLevel:3
+      subMaxLevel:3,
+      search: {
+        maxAge: 3600000,// 过期时间，单位毫秒，默认一天
+        paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
+        placeholder: '搜索',
+        // 支持本地化
+        placeholder: {
+          '/zh-cn/': '搜索',
+          '/': '搜索'
+        },
+        noData: '找不到结果',
+        depth: 4,
+        hideOtherSidebarContent: false,
+        namespace: '搜索',
+        sidebarDisplayLevel: 1,
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- PDFObject.js is a required dependency of this plugin -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
+  <!-- This is the source code of the pdf embed plugin -->
+  <script src="path-to-file/docsify-pdf-embed.js"></script>
+  <!-- or use this if you are not hosting the file yourself -->
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+  <!-- 搜索功能支持 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
